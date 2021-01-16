@@ -1,0 +1,27 @@
+:root {
+  --green: #53d9d1;
+  --pink: #f27b9b;
+  --orange: #eb7132;
+}
+
+html,
+body {
+  /*百分之白的宽度*/
+  width: 100vw;
+  /*百分之白的高度*/
+  height: 100vh;
+  /*外边距0*/
+  margin: 0;
+  /*内边距0*/
+  padding: 0;
+  /*防止溢出，隐藏多出的部分*/
+  overflow: hidden;
+  /*将对象作为弹性伸缩盒显示*/
+  display: flex;
+  /*居中*/
+  align-items: center;
+  /*项目位于容器的中心。*/
+  justify-content: center;
+  /*指定圆形的径向渐变 渐变的颜色*/
+  background: radial-gradient(circle, #ee816a, #a3ceb8, #285f6f);
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="UTF-8">
+<title>CodePen - Gangnam Style&quot; by Psy: Codepen Challenge</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+
+<style>
+  css-doodle {
+    --rule: ( :doodle {
+      /*整个表格的格子数和格子属性，大小款百分之50 高100*/
+        @grid: 50x1 / 100vmin;
+        perspective: 90vmin;
+      }
+  /*制作团的背景 @渐变r表示从start到end的随机值  函数用径向渐变创建 从15% 到100% 背景不重复*/
+      background: @multi(@r(40, 20), (radial-gradient(@p(#53d9d1, #f27b9b, #eb7132) 15%, transparent 50%) @r(100%) @r(100%) / @r(1%, 3%, .1) @lr() no-repeat));
+        /*设置块大小*/
+      @size: 120%;
+     /*偏移的属性，居中*/
+      @place-cell: center;
+/*圆角的边框，圆角50%*/
+      border-radius: 50%;
+  /*让转换的子元素保留3D转换：*/
+      transform-style: preserve-3d;
+  /*图片 纵向扩展15s 无边框循环滚动*/
+      animation: scale-up 15s linear infinite;
+        /*定义动画何时开始。*/
+      animation-delay: calc(@i() * -.4s);
+    /*动画*/
+      @keyframes scale-up {
+          /*动画刚开始*/
+        0% {
+            /*滤镜*/
+          opacity: 0;
+            /*函数使一个元素在三维空间移动，使用三维向量的坐标定义元素在每个方向移动多少*/
+          transform: translate3d(0, 0, 0) rotate(0);
+        }
+        10% {
+            /*滤镜*/
+          opacity: 1;
+        }
+
+        95% {
+            /*函数使一个元素在三维空间移动，使用三维向量的坐标定义元素在从从0变40 到80 左旋转一圈再右旋转一圈*/
+          transform: translate3d(0, 0, @r(40vmin, 85vmin)) rotate(@r(-360deg, 360deg));
+        }
+
+        100% {
+            /*滤镜0*/
+          opacity: 0;
+            /*3d效果回倒1%*/
+          transform: translate3d(0, 0, 1vmin);
+        }
+      }
+
+    );
+  }
+</style>
+
+<css-doodle use="var(--rule)"></css-doodle>
+
+<script src='js/css-doodle.min.js'></script>
+
+</body>
+</html>
